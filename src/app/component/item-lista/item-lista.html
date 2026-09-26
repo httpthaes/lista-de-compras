@@ -34,5 +34,6 @@
     <p>Produto: {{ produto.title }}</p>
     <p>Preço: {{ produto.price }}</p>
     <img [src]="produto.image" [alt]="produto.title" width="100">
+    <a [routerLink]="['/itens', produto.id]">Ver detalhes</a>
   </div>
 }

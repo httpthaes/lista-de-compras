@@ -37,9 +37,13 @@ export class Lista {
     }
 
     buscarSugestoes() {
-        return this.http.get<any[]>('https://fakestoreapi.com/products/') // requisição http
+        return this.http.get<any[]>(`https://fakestoreapi.com/products/`); // requisição http
         // metodo GET para receber resposta
         // o "any[]" é opcional, serve para avisar o TS que vai receber uma lista '[]' de qualquer coisa 'any'
         // return vai devolver o resultado da ligação para a api
     }
+
+     buscarProdutoPorId(id: number) {
+        return this.http.get<any>(`https://fakestoreapi.com/products/${id}`);
+     }
 }

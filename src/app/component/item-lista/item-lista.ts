@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Lista } from '../../services/lista';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-item-lista',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './item-lista.html',
   styleUrl: './item-lista.css',
 })
