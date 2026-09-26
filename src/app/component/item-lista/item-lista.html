@@ -1,0 +1,38 @@
+@for (item of listaService.itens; track item.nome) {
+  <div class="item">
+    <p [class.comprado]="item.comprado">
+      Nome: {{ item.nome }}
+    </p>
+
+    <p [class.comprado]="item.comprado">
+      Quantidade: {{ item.quantidade }}
+    </p>
+
+    <p>
+      Foi comprado? {{ item.comprado ? "sim" : "não" }}
+    </p>
+
+    <button (click)="listaService.marcarComprado(item)">
+      Comprado
+    </button>
+  </div>
+}
+
+@if (listaService.itens.length === 0) {
+  <p>Sua lista está vazia.</p>
+}
+
+<input type="text" [(ngModel)]="listaService.novoItem" placeholder="Digite um novo item...">
+<input type="text" [(ngModel)]="listaService.quantidade" placeholder="Digite a quantidade do item...">
+<button (click)="listaService.adicionarItem()">Adicionar</button>
+
+<!-- *ngFor ou @for: cria um loop For que consegue percorrer uma lista e devolver suas respectivas propriedades -->
+<!-- Property binding (exemplo: [class.comprado]="item.comprado"): aplica um estilo (class) se o valor da propriedade for true -->
+
+@for (produto of sugestoes; track produto.id) {
+  <div class="produtos">
+    <p>Produto: {{ produto.title }}</p>
+    <p>Preço: {{ produto.price }}</p>
+    <img [src]="produto.image" [alt]="produto.title" width="100">
+  </div>
+}

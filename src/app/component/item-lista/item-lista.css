@@ -1,0 +1,10 @@
+.comprado {
+    text-decoration: line-through; 
+    opacity: 0.5;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
